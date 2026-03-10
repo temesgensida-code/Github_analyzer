@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fab fa-github"></i>
+          <span>GitHub Analyzer</span>
+        </div>
+        <nav class="tabs">
+          <button class="tab-btn active" data-tab="analyze">
+            <i class="fas fa-chart-bar"></i> Analyze
+          </button>
+          <button class="tab-btn" data-tab="compare">
+            <i class="fas fa-code-compare"></i> Compare
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Analyze Tab -->
+      <section id="tab-analyze" class="tab-panel active">
+        <div class="search-card">
+          <h2>Analyze a GitHub Profile</h2>
+          <p class="subtitle">Enter a GitHub username to see their statistics</p>
+          <div class="search-bar">
+            <i class="fab fa-github search-icon"></i>
+            <input
+              type="text"
+              id="analyze-input"
+              placeholder="e.g. torvalds"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button id="analyze-btn" class="btn-primary">
+              <i class="fas fa-search"></i> Analyze
+            </button>
+          </div>
+        </div>
+        <div id="analyze-result" class="result-area"></div>
+      </section>
+
+      <!-- Compare Tab -->
+      <section id="tab-compare" class="tab-panel">
+        <div class="search-card">
+          <h2>Compare Two GitHub Profiles</h2>
+          <p class="subtitle">Enter two GitHub usernames to compare their statistics</p>
+          <div class="compare-inputs">
+            <div class="search-bar">
+              <i class="fab fa-github search-icon"></i>
+              <input
+                type="text"
+                id="compare-input-1"
+                placeholder="First username"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+            <span class="vs-badge">VS</span>
+            <div class="search-bar">
+              <i class="fab fa-github search-icon"></i>
+              <input
+                type="text"
+                id="compare-input-2"
+                placeholder="Second username"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+          </div>
+          <button id="compare-btn" class="btn-primary compare-action-btn">
+            <i class="fas fa-code-compare"></i> Compare
+          </button>
+        </div>
+        <div id="compare-result" class="result-area"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Powered by the
+        <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer"
+          >GitHub REST API</a
+        >
+        &mdash; No authentication required for public data
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
